@@ -1,0 +1,40 @@
+﻿@{
+	ViewBag.Title = "How to navigate between editors by pressing the Enter key like by the Tab key";
+}
+<h3>@ViewBag.Message</h3>
+
+<script type="text/javascript">
+	function DoProcessEnterKey(htmlEvent, editName) {
+		if (htmlEvent.keyCode == 13) {
+			htmlEvent.cancelBubble = true;
+			if (editName) {
+				ASPxClientControl.GetControlCollection().GetByName(editName).SetFocus();
+			} else {
+				bt1.DoClick();
+			}
+		}
+	}
+</script>
+@Html.DevExpress().TextBox(s => {
+	s.Name = "TextBox1";
+	s.Properties.ClientInstanceName = "tb1";
+	s.Properties.ClientSideEvents.KeyDown = "function(s, e) { DoProcessEnterKey(e.htmlEvent, 'tb2'); }";	
+}).GetHtml()
+
+@Html.DevExpress().TextBox(s => {
+	s.Name = "TextBox2";
+	s.Properties.ClientInstanceName = "tb2";
+	s.Properties.ClientSideEvents.KeyDown = "function(s, e) { DoProcessEnterKey(e.htmlEvent, 'tb3'); }";	
+}).GetHtml()
+
+@Html.DevExpress().TextBox(s => {
+	s.Name = "TextBox3";
+	s.Properties.ClientInstanceName = "tb3";
+	s.Properties.ClientSideEvents.KeyDown = "function(s, e) { DoProcessEnterKey(e.htmlEvent, ''); }";	
+}).GetHtml()
+
+@Html.DevExpress().Button(s => {
+	s.Name = "bt1";
+	s.Text = "Submit";
+	s.UseSubmitBehavior = true;
+}).GetHtml()
