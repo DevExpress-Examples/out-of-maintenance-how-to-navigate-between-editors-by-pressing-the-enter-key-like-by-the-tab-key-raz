@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Index.cshtml](./CS/DevExpressMvcApplication1/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # How to navigate between editors by pressing the Enter key like by the Tab key (Razor demo)
 
 
