@@ -5,7 +5,7 @@
 <!-- default file list end -->
 # How to navigate between editors by pressing the Enter key like by the Tab key (Razor demo)
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e3552)**
+**[[Run Online]](https://codecentral.devexpress.com/e3552/)**
 <!-- run online end -->
 
 
